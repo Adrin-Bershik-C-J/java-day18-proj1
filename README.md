@@ -1,12 +1,15 @@
-# Day17proj1 - Bug Management API
+# Bug Tracker API (Spring Boot)
 
-A simple Spring Boot REST API for managing bugs with pagination support.
+A simple **Spring Boot** application for tracking software bugs with role-based access control using **Spring Security**.  
+It supports filtering, pagination, creation, updating, and deletion of bug records.  
+
+---
 
 ## 📂 Project Structure
-
 ```
 Directory structure:
-└── adrin-bershik-c-j-day17proj1/
+└── adrin-bershik-c-j-java-day18-proj1/
+    ├── README.md
     ├── mvnw
     ├── mvnw.cmd
     ├── pom.xml
@@ -17,6 +20,8 @@ Directory structure:
     │   │   │       └── example/
     │   │   │           └── day14proj1/
     │   │   │               ├── Day14proj1Application.java
+    │   │   │               ├── config/
+    │   │   │               │   └── SecurityConfig.java
     │   │   │               ├── controller/
     │   │   │               │   └── BugController.java
     │   │   │               ├── dto/
@@ -43,43 +48,38 @@ Directory structure:
 
 ```
 
+---
+
 ## 🚀 Features
+- **Role-based security** with in-memory users (`ADMIN`, `USER`)
+- **Filter bugs** by status, assignee, or project
+- **Pagination** for bug listing
+- **CRUD** operations on bugs
+- **DTO Mapping** using MapStruct
+- **PostgreSQL** database integration
 
-- Create, Read, Update, and Delete bugs
-- Pagination with page numbers starting from 1
-- Data Transfer Object (DTO) mapping
-- RESTful API design
-- JPA & Hibernate for persistence
+---
 
-## 🛠️ Technologies Used
-
+## 🔧 Requirements
 - Java 17+
-- Spring Boot 3+
-- Spring Data JPA
-- Lombok
-- MapStruct
-- Maven
+- Maven 3+
+- PostgreSQL (running locally or remotely)
 
-## ⚙️ Configuration
+---
 
-Edit `src/main/resources/application.properties` to match your database setup:
+## ⚙️ Setup
 
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/bugdb
-spring.datasource.username=root
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Adrin-Bershik-C-J/java-day18-proj1.git
+cd java-day18-proj1
 ```
 
-## Running the project
-
-# Clone the repository
+### 2. Configure Database
 ```
-git clone https://github.com/Adrin-Bershik-C-J/day17proj1.git
-
-cd day17proj1
+spring.datasource.url=jdbc:postgresql://localhost:5432/day14proj1
+spring.datasource.username=postgres
+spring.datasource.password=YOUR_PASSWORD
 ```
 
-# Run with Maven
-./mvnw spring-boot:run
+The app will start at http://localhost:8080.
